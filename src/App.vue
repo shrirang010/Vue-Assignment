@@ -1,28 +1,52 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="d-flex flex-column">
+    <AppNavbar />
+    <LogobarComponent :logos="logos" />
+    <HeaderComponent />
+    <SkillbarComponent />
+    <GalleryComponent />
+    <TestimonialComponent />
+    <FooterComponent />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import AppNavbar from "./components/AppNavbar.vue";
+import LogobarComponent from "./components/Logobar.vue";
+import HeaderComponent from "./components/Header.vue";
+import SkillbarComponent from "./components/Skillbar.vue";
+import GalleryComponent from "./components/Gallery.vue";
+import TestimonialComponent from "./components/Testimonial.vue"
+import FooterComponent from "./components/Footer.vue"
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AppNavbar,
+    LogobarComponent,
+    HeaderComponent,
+    SkillbarComponent,
+    GalleryComponent,
+    TestimonialComponent,
+    FooterComponent
+  },
+  data() {
+    return {
+      logos: ["/images/google.png", "/images/nike.png", "/images/samsung.png", "/images/apple.png", "/images/addidas.png"]
+    }
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+}
+@media (max-width:1000px)
+{
+  #app{
+    justify-content: center;
+    align-items: center;
+  }
 }
 </style>
